@@ -76,7 +76,7 @@ public class ApiController {
      * @param minRate
      * @return
      */
-    @GetMapping("/stats")
+    @GetMapping("/stats/{minRate}")
     public ResponseEntity<Estadisticas> obtenerEstadisticas(@RequestParam double minRate) {
         long itemsTotales = itemRepository.count();
         List<Item> itemsMejorValuados = itemRepository.findAllByRateGreaterThan(minRate);
